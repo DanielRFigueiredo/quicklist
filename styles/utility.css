@@ -1,0 +1,52 @@
+.only-desktop {
+  display: none;
+}
+
+.container {
+  width: min(100%, 22rem);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fade .5s ease-in-out forwards;
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+}
+
+
+.fade-out{
+  opacity: 1;
+  animation: out .25s ease-in-out forwards;
+}
+
+@keyframes out {
+  to{
+    transform: translateX(30%) scale(.8);
+    opacity: 0;
+
+  }
+}
+
+
+
+@media (width > 768px) {
+
+  .only-desktop {
+    display: initial;
+  }
+
+  .container {
+    width: min(100%, 43rem);
+    padding-inline: 2rem;
+  }
+}

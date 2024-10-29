@@ -1,0 +1,82 @@
+ul[role="list"] {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: .75rem;
+
+  & li {
+    height: 57px;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    padding: 12px;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+
+    width: 100%;
+
+    & span:first-child {
+      position: relative;
+
+      &:hover {
+        .check {
+          border: 1px solid var(--border-hover, #B9C2D0);
+        }
+      }
+
+      &:has(:focus) {
+        .check {
+          border: 1px solid var(--border-hover, #B9C2D0);
+        }
+      }
+
+      & input {
+        width: 1rem;
+        height: 1rem;
+        position: absolute;
+        opacity: 0;
+      }
+
+      & .check {
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 6px;
+        border: 1px solid var(--color-border-primary);
+        background: var(--bg-secondary);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & img {
+          display: none;
+        }
+      }
+
+    
+    }
+    & button{
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: none;
+      background-color: transparent;
+    }
+
+    &>span:has(:checked) {
+      & .check {
+        border: 1px solid var(--color-brand, #CA3884);
+        background: var(--color-brand, #CA3884);
+
+        & img {
+          display: block;
+        }
+      }
+    }
+
+  }
+
+}
